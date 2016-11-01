@@ -10,7 +10,7 @@ import com.gordonwong.materialsheetfab.AnimatedFab;
  * Created by amarshall on 10/31/16.
  */
 
-public class MyFAB extends FloatingActionButton implements AnimatedFab {
+public class MyFAB extends FloatingActionButton {
 
 
     public MyFAB(Context context) {
@@ -23,10 +23,5 @@ public class MyFAB extends FloatingActionButton implements AnimatedFab {
 
     public MyFAB(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
-
-    @Override
-    public void show(float translationX, float translationY) {
-
     }
 }

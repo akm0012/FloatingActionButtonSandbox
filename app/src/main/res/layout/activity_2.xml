@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="bottom"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginEnd="16dp"
         android:paddingStart="@dimen/padding_normal"
         android:paddingTop="@dimen/padding_dialog"
         android:paddingEnd="@dimen/padding_dialog"

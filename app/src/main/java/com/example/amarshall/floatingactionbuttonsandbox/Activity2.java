@@ -2,6 +2,7 @@ package com.example.amarshall.floatingactionbuttonsandbox;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,16 +31,29 @@ public class Activity2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Activity2.this, Activity3.class);
 
-                FabTransform.addExtras(intent,
-                        ContextCompat.getColor(Activity2.this, R.color.colorAccent), R.drawable.ic_add_dark);
+//                FabTransform.addExtras(intent,
+//                        ContextCompat.getColor(Activity2.this, R.color.colorAccent), R.drawable.ic_add_dark);
 
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Activity2.this, container,
                         getString(R.string.transition_designer_news_login));
 
                 startActivityForResult(intent, RC_NEW_DESIGNER_NEWS_LOGIN, options.toBundle());
+
+                finish();
+
             }
         });
     }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == RC_NEW_DESIGNER_NEWS_LOGIN) {
+//            finish();
+//        }
+//
+//    }
 
     public void dismiss(View view) {
         onBackPressed();

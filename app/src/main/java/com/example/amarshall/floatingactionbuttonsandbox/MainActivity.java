@@ -27,16 +27,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final MyFAB fab = (MyFAB) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-        View sheetView = findViewById(R.id.fab_sheet);
-        View overlay = findViewById(R.id.overlay);
-        int sheetColor = getResources().getColor(R.color.colorAccent);
-        int fabColor = getResources().getColor(R.color.colorAccent);
-
-        // Initialize material sheet FAB
-        materialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay,
-                sheetColor, fabColor);
+//        View sheetView = findViewById(R.id.fab_sheet);
+//        View overlay = findViewById(R.id.overlay);
+//        int sheetColor = getResources().getColor(R.color.colorAccent);
+//        int fabColor = getResources().getColor(R.color.colorAccent);
+//
+//        // Initialize material sheet FAB
+//        materialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay,
+//                sheetColor, fabColor);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
