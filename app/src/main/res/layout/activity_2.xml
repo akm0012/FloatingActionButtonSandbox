@@ -1,121 +1,35 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="dismiss">
 
     <LinearLayout
         android:id="@+id/container"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="16dp"
-        android:paddingStart="@dimen/padding_normal"
-        android:paddingTop="@dimen/padding_dialog"
-        android:paddingEnd="@dimen/padding_dialog"
-        android:layout_marginBottom="30dp"
-        android:paddingBottom="@dimen/padding_normal"
-        android:orientation="vertical"
-        android:elevation="@dimen/z_fab"
         android:layout_gravity="end|bottom"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
         android:background="@drawable/dialog_background"
         android:clickable="true"
+        android:elevation="@dimen/z_fab"
+        android:gravity="bottom"
+        android:orientation="vertical"
         android:transitionName="@string/transition_designer_news_login">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="next"/>
+        <!--<Button-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="next"/>-->
 
-        <!--<com.example.amarshall.floatingactionbuttonsandbox.BaselineGridTextView-->
-            <!--android:id="@+id/dialog_title"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginStart="@dimen/spacing_normal"-->
-            <!--android:layout_marginBottom="@dimen/dialog_title_spacing"-->
-            <!--android:text="Text"-->
-            <!--style="@style/Widget.Plaid.DialogTitle" />-->
-
-        <!--<android.support.design.widget.TextInputLayout-->
-            <!--android:id="@+id/username_float_label"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginStart="@dimen/spacing_micro"-->
-            <!--app:hintTextAppearance="@style/TextAppearance.FloatLabelHint">-->
-
-            <!--<AutoCompleteTextView-->
-                <!--android:id="@+id/username"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:visibility="gone"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Username"-->
-                <!--android:inputType="textEmailAddress"-->
-                <!--android:textColorHighlight="@color/designer_news_link_highlight"-->
-                <!--android:selectAllOnFocus="true" />-->
-
-        <!--</android.support.design.widget.TextInputLayout>-->
-
-        <!--<CheckBox-->
-            <!--android:id="@+id/permission_primer"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginStart="@dimen/spacing_normal"-->
-            <!--android:text="Check"-->
-            <!--style="@style/Widget.Plaid.HintCheckBox" />-->
-
-        <!--<android.support.design.widget.TextInputLayout-->
-            <!--android:id="@+id/password_float_label"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginStart="@dimen/spacing_micro"-->
-            <!--app:hintTextAppearance="@style/TextAppearance.FloatLabelHint"-->
-            <!--app:passwordToggleDrawable="@drawable/asl_password_visibility"-->
-            <!--app:passwordToggleTint="?colorControlNormal">-->
-
-            <!--<io.plaidapp.ui.widget.PasswordEntry-->
-                <!--android:id="@+id/password"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="@string/password"-->
-                <!--android:visibility="gone"-->
-                <!--android:inputType="textPassword"-->
-                <!--android:selectAllOnFocus="true" />-->
-
-        <!--</android.support.design.widget.TextInputLayout>-->
-
-        <!--<FrameLayout-->
-            <!--android:id="@+id/actions_container"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="@dimen/padding_normal">-->
-
-            <!--<Button-->
-                <!--android:id="@+id/signup"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="start"-->
-                <!--android:text="@string/sign_up"-->
-                <!--android:textColor="?android:colorAccent"-->
-                <!--android:onClick="signup"-->
-                <!--style="?android:borderlessButtonStyle" />-->
-
-            <!--<Button-->
-                <!--android:id="@+id/login"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="end"-->
-                <!--android:enabled="false"-->
-                <!--android:text="@string/dn_login_action"-->
-                <!--android:textAppearance="@style/TextAppearance.DarkButton"-->
-                <!--android:onClick="doLogin" />-->
-
-        <!--</FrameLayout>-->
-
-        <!--<include layout="@layout/loading" />-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 

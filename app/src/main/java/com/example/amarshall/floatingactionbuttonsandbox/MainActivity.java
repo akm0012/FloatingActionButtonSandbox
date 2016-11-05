@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
 
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     MaterialSheetFab materialSheetFab;
 
+    CheckBox checkBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        checkBox = (CheckBox) findViewById(R.id.checkbox);
 
 //        View sheetView = findViewById(R.id.fab_sheet);
 //        View overlay = findViewById(R.id.overlay);
@@ -46,15 +51,30 @@ public class MainActivity extends AppCompatActivity {
 //                } else {
 //                    materialSheetFab.showSheet();
 //                }
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
+                if (checkBox.isChecked()) {
+                    Intent intent = new Intent(MainActivity.this, Activity2.class);
 
-                FabTransform.addExtras(intent,
-                        ContextCompat.getColor(MainActivity.this, R.color.colorAccent), R.drawable.ic_add_dark);
+                    FabTransform.addExtras(intent,
+                            ContextCompat.getColor(MainActivity.this, R.color.colorAccent), R.drawable.ic_add_dark);
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, fab,
-                        getString(R.string.transition_designer_news_login));
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, fab,
+                            getString(R.string.transition_designer_news_login));
 
-                startActivityForResult(intent, RC_NEW_DESIGNER_NEWS_LOGIN, options.toBundle());
+                    startActivityForResult(intent, RC_NEW_DESIGNER_NEWS_LOGIN, options.toBundle());
+                } else {
+                    Intent intent = new Intent(MainActivity.this, Activity3.class);
+
+                    intent.putExtra("fromFAB", true);
+
+                    FabTransform.addExtras(intent,
+                            ContextCompat.getColor(MainActivity.this, R.color.colorAccent), R.drawable.ic_add_dark);
+
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, fab,
+                            getString(R.string.transition_designer_news_login));
+
+                    startActivityForResult(intent, RC_NEW_DESIGNER_NEWS_LOGIN, options.toBundle());
+                }
+
             }
         });
     }

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
 import android.view.View;
@@ -19,6 +20,18 @@ public class Activity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3);
+
+        if (getIntent().getBooleanExtra("fromFAB", false)) {
+
+            if (!FabTransform.setup(this, container)) {
+                MorphTransform.setup(this, container,
+                        ContextCompat.getColor(this, R.color.background_light),
+                        getResources().getDimensionPixelSize(R.dimen.dialog_corners));
+            }
+
+        }
+
+
 
         container = findViewById(R.id.container);
 
@@ -78,7 +91,7 @@ public class Activity3 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+//    super.onBackPressed();
         float t = determineHeightOfScreen();
 
         container.animate()
